@@ -1,2 +1,4 @@
-include ':app'
 rootProject.name = "TestMercadoPago"
+include ':app'
+include ':data'
+include ':domain'
