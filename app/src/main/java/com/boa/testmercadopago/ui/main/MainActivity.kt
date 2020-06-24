@@ -1,8 +1,8 @@
-package com.boa.testmercadopago
+package com.boa.testmercadopago.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.boa.testmercadopago.ui.main.MainFragment
+import androidx.appcompat.app.AppCompatActivity
+import com.boa.testmercadopago.R
 
 class MainActivity : AppCompatActivity() {
 

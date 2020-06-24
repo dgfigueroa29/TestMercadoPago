@@ -19,7 +19,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute, LockedOrientationActivity">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

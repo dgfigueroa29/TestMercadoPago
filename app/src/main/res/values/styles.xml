@@ -7,4 +7,32 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Toolbar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:text">@string/continue_btn</item>
+        <item name="android:background">@drawable/accent_background</item>
+        <item name="android:layout_marginTop">110dp</item>
+    </style>
 </resources>

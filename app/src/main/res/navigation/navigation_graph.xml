@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/navigation_fragment_amount">
+
+    <fragment
+        android:id="@+id/navigation_fragment_amount"
+        android:name="com.boa.testmercadopago.ui.amount.AmountFragment"
+        tools:layout="@layout/amount_fragment">
+        <action
+            android:id="@+id/navigation_action_amount_to_payment"
+            app:destination="@+id/navigation_fragment_payment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fragment_payment"
+        android:name="com.boa.testmercadopago.ui.payment.PaymentFragment"
+        tools:layout="@layout/payment_fragment">
+        <action
+            android:id="@+id/navigation_action_payment_to_bank"
+            app:destination="@+id/navigation_fragment_bank"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fragment_bank"
+        android:name="com.boa.testmercadopago.ui.bank.BankFragment"
+        tools:layout="@layout/bank_fragment">
+        <action
+            android:id="@+id/navigation_action_bank_to_installment"
+            app:destination="@+id/navigation_fragment_installment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fragment_installment"
+        android:name="com.boa.testmercadopago.ui.installment.InstallmentFragment"
+        tools:layout="@layout/installment_fragment">
+        <action
+            android:id="@+id/navigation_action_installment_to_success"
+            app:destination="@+id/navigation_fragment_success"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fragment_success"
+        android:name="com.boa.testmercadopago.ui.success.SuccessFragment"
+        tools:layout="@layout/success_fragment">
+        <action
+            android:id="@+id/navigation_action_success_to_amount"
+            app:destination="@+id/navigation_fragment_amount"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+</navigation>

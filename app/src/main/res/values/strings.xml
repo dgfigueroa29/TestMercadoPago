@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestMercadoPago</string>
+    <string name="input_hint">Ingrese un monto</string>
+    <string name="continue_btn">Continuar</string>
 </resources>

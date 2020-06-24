@@ -61,6 +61,7 @@ dependencies {
     implementation libraries.material
     implementation libraries.cardview
     implementation libraries.glide
+    implementation libraries.currency_input
     kapt libraries.glide_compiler
     androidTestImplementation libraries.test_ext
     androidTestImplementation libraries.rules
