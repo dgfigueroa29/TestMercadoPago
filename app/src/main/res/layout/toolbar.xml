@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/view_toolbar_root"
+    android:id="@+id/toolbar_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorPrimary"
@@ -10,7 +10,7 @@
     tools:ignore="Overdraw">
 
     <TextView
-        android:id="@+id/view_toolbar_title"
+        android:id="@+id/toolbarTitle"
         style="@style/Toolbar.Title" />
 
 </androidx.appcompat.widget.Toolbar>

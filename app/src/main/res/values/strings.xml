@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">TestMercadoPago</string>
-    <string name="input_hint">Ingrese un monto</string>
+    <string name="input_hint">Monto</string>
     <string name="continue_btn">Continuar</string>
+    <string name="amount_title">¿Cuánto querés ingresar?</string>
+    <string name="payment_title">Elegí cómo ingresar dinero</string>
+    <string name="bank_title">Elegí cómo pagar</string>
+    <string name="installment_title">Elegí en cuantas cuotas pagar</string>
+    <string name="success_title">Felicidades!</string>
+    <string name="input_error">Ingresá un monto mayor a 0</string>
 </resources>
