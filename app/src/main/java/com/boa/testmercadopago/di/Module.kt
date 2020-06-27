@@ -11,9 +11,9 @@ import org.koin.dsl.module
 
 val appModule = module {
     viewModel { AmountViewModel() }
-    viewModel { BankViewModel() }
-    viewModel { InstallmentViewModel() }
+    viewModel { BankViewModel(get()) }
+    viewModel { InstallmentViewModel(get()) }
     viewModel { MainViewModel() }
-    viewModel { PaymentViewModel() }
+    viewModel { PaymentViewModel(get()) }
     viewModel { SuccessViewModel() }
 }
