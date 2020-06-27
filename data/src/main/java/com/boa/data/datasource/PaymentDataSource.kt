@@ -1,3 +1,7 @@
 package com.boa.data.datasource
 
-interface PaymentDataSource
+import com.boa.data.datasource.remote.response.PaymentResponse
+
+interface PaymentDataSource {
+    suspend fun getPaymentMethods(): List<PaymentResponse>
+}

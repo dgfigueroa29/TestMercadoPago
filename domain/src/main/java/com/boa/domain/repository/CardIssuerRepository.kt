@@ -1,3 +1,7 @@
 package com.boa.domain.repository
 
-interface CardIssuerRepository
+import com.boa.domain.model.CardIssuer
+
+interface CardIssuerRepository {
+    suspend fun getCardIssuersList(paymentMethodId: String): List<CardIssuer>
+}
