@@ -8,9 +8,9 @@ import kotlinx.coroutines.Dispatchers
 import org.koin.dsl.module
 
 val domainModule = module {
-    single { CoroutineScope(Dispatchers.IO) }
-
     factory { GetPaymentMethodsUseCase(get(), get()) }
     factory { GetCardIssuersUseCase(get(), get()) }
     factory { GetInstallmentsUseCase(get(), get()) }
+
+    single { CoroutineScope(Dispatchers.IO) }
 }

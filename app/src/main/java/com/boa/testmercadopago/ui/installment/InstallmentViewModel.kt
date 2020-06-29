@@ -5,15 +5,14 @@ import com.boa.domain.base.BaseStatusObserver
 import com.boa.domain.model.Installment
 import com.boa.domain.usecase.GetInstallmentsUseCase
 import com.boa.testmercadopago.base.BaseViewModel
-import com.boa.testmercadopago.base.BaseViewState
 
 class InstallmentViewModel(private val getInstallmentsUseCase: GetInstallmentsUseCase) :
-    BaseViewModel<BaseViewState>() {
+    BaseViewModel<InstallmentViewState>() {
     private var resultList: List<Installment> = listOf()
     private var paymentMethodId: String = "visa"
     private var issuerId: String = "288"
     private var amount: Float = 1000F
-    override fun getInitialViewState(): BaseViewState = BaseViewState()
+    override fun getInitialViewState(): InstallmentViewState = InstallmentViewState()
 
     override fun initialize() {
         val bankViewState = getInitialViewState()

@@ -6,7 +6,7 @@ import com.boa.data.datasource.remote.response.PaymentResponse
 import retrofit2.http.GET
 import retrofit2.http.Url
 
-interface Api {
+interface AppApi {
     @GET
     suspend fun getPaymentMethods(@Url url: String): List<PaymentResponse>
 

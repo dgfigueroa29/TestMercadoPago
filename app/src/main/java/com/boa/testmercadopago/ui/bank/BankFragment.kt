@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.View
 import com.boa.testmercadopago.R
 import com.boa.testmercadopago.base.BaseFragment
-import com.boa.testmercadopago.base.BaseViewState
 import kotlinx.android.synthetic.main.toolbar.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
-class BankFragment : BaseFragment<BaseViewState, BankViewModel>() {
+class BankFragment : BaseFragment<BankViewState, BankViewModel>() {
     override fun initViewModel(): BankViewModel = getViewModel()
 
     override fun getLayoutResource(): Int = R.layout.bank_fragment
@@ -19,6 +18,6 @@ class BankFragment : BaseFragment<BaseViewState, BankViewModel>() {
         toolbarTitle.text = getString(R.string.bank_title)
     }
 
-    override fun onViewStateUpdated(viewState: BaseViewState) {
+    override fun onViewStateUpdated(viewState: BankViewState) {
     }
 }

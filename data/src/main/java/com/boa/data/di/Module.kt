@@ -16,6 +16,7 @@ import com.boa.data.repository.PaymentMethodRepositoryImpl
 import com.boa.domain.repository.CardIssuerRepository
 import com.boa.domain.repository.InstallmentRepository
 import com.boa.domain.repository.PaymentMethodRepository
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val dataModule = module {
@@ -30,7 +31,8 @@ val dataModule = module {
     single { PaymentMethodResponseToModelMapper() }
     single { CardIssuerResponseToModelMapper() }
     single { InstallmentResponseToModelMapper() }
-    single { ApiProvider() }
+
+    single { ApiProvider(androidContext()) }
     single {
         val apiProvider: ApiProvider = get()
         apiProvider.api

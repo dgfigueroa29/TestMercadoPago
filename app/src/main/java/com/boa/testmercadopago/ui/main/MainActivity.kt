@@ -3,10 +3,9 @@ package com.boa.testmercadopago.ui.main
 import android.os.Bundle
 import com.boa.testmercadopago.R
 import com.boa.testmercadopago.base.BaseActivity
-import com.boa.testmercadopago.base.BaseViewState
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
-class MainActivity : BaseActivity<BaseViewState, MainViewModel>() {
+class MainActivity : BaseActivity<MainViewState, MainViewModel>() {
     override fun initViewModel(): MainViewModel = getViewModel()
 
     override fun getLayoutResource(): Int = R.layout.main_activity
@@ -16,6 +15,6 @@ class MainActivity : BaseActivity<BaseViewState, MainViewModel>() {
         viewModel.initialize()
     }
 
-    override fun onViewStateUpdated(viewState: BaseViewState) {
+    override fun onViewStateUpdated(viewState: MainViewState) {
     }
 }

@@ -1,10 +1,9 @@
 package com.boa.testmercadopago.ui.success
 
 import com.boa.testmercadopago.base.BaseViewModel
-import com.boa.testmercadopago.base.BaseViewState
 
-class SuccessViewModel : BaseViewModel<BaseViewState>() {
-    override fun getInitialViewState(): BaseViewState = BaseViewState()
+class SuccessViewModel : BaseViewModel<SuccessViewState>() {
+    override fun getInitialViewState(): SuccessViewState = SuccessViewState()
 
     override fun initialize() {
     }

@@ -1,5 +1,6 @@
 package com.boa.data.datasource.remote
 
+import android.content.Context
 import com.boa.data.util.BASE_URL
 import com.boa.domain.base.BaseError
 import com.boa.domain.base.BaseException
@@ -13,8 +14,8 @@ import java.lang.reflect.Type
 import java.util.*
 import javax.net.ssl.HttpsURLConnection
 
-class ApiProvider {
-    val api: Api
+class ApiProvider(context: Context) {
+    val api: AppApi
 
     init {
         val builder = GsonBuilder()
@@ -36,7 +37,7 @@ class ApiProvider {
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(builder.create()))
             .build()
-        api = retrofitBuilder.create(Api::class.java)
+        api = retrofitBuilder.create(AppApi::class.java)
     }
 
     private fun getOkHttpClient(): OkHttpClient {

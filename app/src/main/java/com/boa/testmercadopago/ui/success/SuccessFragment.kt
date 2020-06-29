@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.View
 import com.boa.testmercadopago.R
 import com.boa.testmercadopago.base.BaseFragment
-import com.boa.testmercadopago.base.BaseViewState
 import kotlinx.android.synthetic.main.toolbar.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
-class SuccessFragment : BaseFragment<BaseViewState, SuccessViewModel>() {
+class SuccessFragment : BaseFragment<SuccessViewState, SuccessViewModel>() {
     override fun initViewModel(): SuccessViewModel = getViewModel()
 
     override fun getLayoutResource(): Int = R.layout.success_fragment
@@ -19,6 +18,6 @@ class SuccessFragment : BaseFragment<BaseViewState, SuccessViewModel>() {
         toolbarTitle.text = getString(R.string.success_title)
     }
 
-    override fun onViewStateUpdated(viewState: BaseViewState) {
+    override fun onViewStateUpdated(viewState: SuccessViewState) {
     }
 }

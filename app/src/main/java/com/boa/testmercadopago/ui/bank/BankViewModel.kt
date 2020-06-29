@@ -5,13 +5,12 @@ import com.boa.domain.base.BaseStatusObserver
 import com.boa.domain.model.CardIssuer
 import com.boa.domain.usecase.GetCardIssuersUseCase
 import com.boa.testmercadopago.base.BaseViewModel
-import com.boa.testmercadopago.base.BaseViewState
 
 class BankViewModel(private val getCardIssuersUseCase: GetCardIssuersUseCase) :
-    BaseViewModel<BaseViewState>() {
+    BaseViewModel<BankViewState>() {
     private var resultList: List<CardIssuer> = listOf()
     private var paymentMethodId: String = "visa"
-    override fun getInitialViewState(): BaseViewState = BaseViewState()
+    override fun getInitialViewState(): BankViewState = BankViewState()
 
     override fun initialize() {
         val bankViewState = getInitialViewState()

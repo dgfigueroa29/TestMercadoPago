@@ -1,10 +1,9 @@
 package com.boa.testmercadopago.ui.amount
 
 import com.boa.testmercadopago.base.BaseViewModel
-import com.boa.testmercadopago.base.BaseViewState
 
-class AmountViewModel : BaseViewModel<BaseViewState>() {
-    override fun getInitialViewState(): BaseViewState = BaseViewState()
+class AmountViewModel : BaseViewModel<AmountViewState>() {
+    override fun getInitialViewState(): AmountViewState = AmountViewState()
 
     override fun initialize() {
     }
