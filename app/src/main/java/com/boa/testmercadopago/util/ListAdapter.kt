@@ -8,15 +8,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.boa.domain.model.CardIssuer
 import com.boa.domain.model.Installment
 import com.boa.domain.model.PaymentMethod
+import com.boa.domain.util.clean
 import com.boa.testmercadopago.R
 import com.boa.testmercadopago.base.OnSelectItem
+import java.lang.ref.WeakReference
 
-class ListAdapter<T>(private val context: Context, private val onSelectItem: OnSelectItem<T>) :
+class ListAdapter<T>(
+    private val context: WeakReference<Context>,
+    private val onSelectItem: OnSelectItem<T>
+) :
     RecyclerView.Adapter<ListViewHolder>() {
     private var list = listOf<T>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view = LayoutInflater.from(context).inflate(
+        val view = LayoutInflater.from(context.get()).inflate(
             R.layout.item_list,
             parent,
             false
@@ -35,15 +40,15 @@ class ListAdapter<T>(private val context: Context, private val onSelectItem: OnS
 
         when (val item = list[position]) {
             is CardIssuer -> {
-                holder.itemListText.text = item.name
+                holder.itemListText.text = item.name.clean()
             }
 
             is PaymentMethod -> {
-                holder.itemListText.text = item.name
+                holder.itemListText.text = item.name.clean()
             }
 
             is Installment -> {
-                holder.itemListText.text = item.message
+                holder.itemListText.text = item.message.clean()
             }
         }
     }

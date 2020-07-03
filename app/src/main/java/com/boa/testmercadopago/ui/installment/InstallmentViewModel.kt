@@ -9,27 +9,27 @@ import com.boa.testmercadopago.base.BaseViewModel
 class InstallmentViewModel(private val getInstallmentsUseCase: GetInstallmentsUseCase) :
     BaseViewModel<InstallmentViewState>() {
     private var resultList: List<Installment> = listOf()
-    private var paymentMethodId: String = "visa"
-    private var issuerId: String = "288"
-    private var amount: Float = 1000F
+    var paymentMethodId: String = ""
+    var cardIssuerId: String = ""
+    var amount: Float = 0F
     override fun getInitialViewState(): InstallmentViewState = InstallmentViewState()
 
     override fun initialize() {
-        val bankViewState = getInitialViewState()
+        val installmentViewState = getInitialViewState()
         BaseStatusObserver(
             resourceViewState,
             getInstallmentsUseCase.execute(
                 GetInstallmentsUseCase.Params(
                     paymentMethodId,
-                    issuerId,
+                    cardIssuerId,
                     amount
                 )
             ),
             {
                 resultList = it ?: resultList
-                bankViewState.isReady = true
-                //paymentViewState.resultList = resultList
-                resourceViewState.value = bankViewState
+                installmentViewState.isReady = true
+                installmentViewState.resultList = resultList
+                resourceViewState.value = installmentViewState
             },
             this::onError,
             this::onLoading

@@ -45,6 +45,7 @@
         <action
             android:id="@+id/navigation_action_installment_to_success"
             app:destination="@+id/navigation_fragment_success"
+            app:launchSingleTop="true"
             app:enterAnim="@android:anim/slide_out_right"
             app:exitAnim="@android:anim/slide_in_left" />
     </fragment>

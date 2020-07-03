@@ -15,3 +15,10 @@ fun String?.containsSomething(value: String = ""): Boolean = if (this != null) {
 } else {
     false
 }
+
+fun String?.clean(): String =
+    if (this.containsSomething()) {
+        this?.replace("^[\n\r\t]", "")?.replace("[\n\r\t]$", "")?.replace("  ", "") ?: ""
+    } else {
+        ""
+    }

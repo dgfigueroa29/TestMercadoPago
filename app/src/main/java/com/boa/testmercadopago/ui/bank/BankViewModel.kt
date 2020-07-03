@@ -9,7 +9,7 @@ import com.boa.testmercadopago.base.BaseViewModel
 class BankViewModel(private val getCardIssuersUseCase: GetCardIssuersUseCase) :
     BaseViewModel<BankViewState>() {
     private var resultList: List<CardIssuer> = listOf()
-    private var paymentMethodId: String = "visa"
+    var paymentMethodId: String = ""
     override fun getInitialViewState(): BankViewState = BankViewState()
 
     override fun initialize() {
@@ -20,7 +20,7 @@ class BankViewModel(private val getCardIssuersUseCase: GetCardIssuersUseCase) :
             {
                 resultList = it ?: resultList
                 bankViewState.isReady = true
-                //paymentViewState.resultList = resultList
+                bankViewState.resultList = resultList
                 resourceViewState.value = bankViewState
             },
             this::onError,

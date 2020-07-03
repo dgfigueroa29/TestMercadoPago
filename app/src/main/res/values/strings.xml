@@ -7,5 +7,6 @@
     <string name="bank_title">Elegí cómo pagar</string>
     <string name="installment_title">Elegí en cuantas cuotas pagar</string>
     <string name="success_title">Felicidades!</string>
+    <string name="success_text">Tu recarga fue exitosa</string>
     <string name="input_error">Ingresá un monto mayor a 0</string>
 </resources>

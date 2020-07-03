@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.lang.ref.WeakReference
 
 fun View.hideKeyboard() {
     val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -28,14 +29,14 @@ fun Fragment?.receiveSafeString(key: String): String = if (this?.requireArgument
     ""
 }
 
-fun RecyclerView?.build(context: Context) {
-    val layoutManager = LinearLayoutManager(context)
+fun RecyclerView?.build(context: WeakReference<Context>) {
+    val layoutManager = LinearLayoutManager(context.get())
     layoutManager.orientation = LinearLayoutManager.VERTICAL
     this?.hasFixedSize()
     this?.layoutManager = layoutManager
     this?.addItemDecoration(
         DividerItemDecoration(
-            context,
+            context.get(),
             layoutManager.orientation
         )
     )

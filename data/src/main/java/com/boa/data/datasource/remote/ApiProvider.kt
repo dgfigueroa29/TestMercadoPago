@@ -1,20 +1,19 @@
 package com.boa.data.datasource.remote
 
-import android.content.Context
+import com.boa.data.BuildConfig
 import com.boa.data.util.BASE_URL
 import com.boa.domain.base.BaseError
 import com.boa.domain.base.BaseException
 import com.google.gson.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.reflect.Type
 import java.util.*
 import javax.net.ssl.HttpsURLConnection
 
-class ApiProvider(context: Context) {
+class ApiProvider {
     val api: AppApi
 
     init {

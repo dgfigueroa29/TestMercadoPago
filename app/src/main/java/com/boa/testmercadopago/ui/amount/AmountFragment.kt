@@ -2,6 +2,7 @@ package com.boa.testmercadopago.ui.amount
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.addCallback
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import com.boa.testmercadopago.R
@@ -41,7 +42,7 @@ class AmountFragment : BaseFragment<AmountViewState, AmountViewModel>() {
                     requireActivity().findNavController(R.id.amountFragmentRoot)
                         .navigate(
                             R.id.navigation_action_amount_to_payment,
-                            bundleOf(ARGUMENT_AMOUNT to "$amountFragmentInput.cleanIntValue")
+                            bundleOf(ARGUMENT_AMOUNT to "${amountFragmentInput.cleanIntValue}")
                         )
                 }
             }
@@ -49,5 +50,12 @@ class AmountFragment : BaseFragment<AmountViewState, AmountViewModel>() {
     }
 
     override fun onViewStateUpdated(viewState: AmountViewState) {
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            requireActivity().finish()
+        }
     }
 }
