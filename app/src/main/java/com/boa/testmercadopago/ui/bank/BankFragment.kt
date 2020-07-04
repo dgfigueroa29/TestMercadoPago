@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import androidx.transition.TransitionManager
 import com.boa.domain.model.CardIssuer
 import com.boa.testmercadopago.R
 import com.boa.testmercadopago.base.BaseFragment
 import com.boa.testmercadopago.base.OnSelectItem
 import com.boa.testmercadopago.util.*
+import com.boa.testmercadopago.view.Stagger
 import kotlinx.android.synthetic.main.bank_fragment.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -39,6 +41,7 @@ class BankFragment : BaseFragment<BankViewState, BankViewModel>(),
 
     override fun onViewStateUpdated(viewState: BankViewState) {
         if (viewState.isReady) {
+            TransitionManager.beginDelayedTransition(bankFragmentList, Stagger())
             adapter?.setData(viewState.resultList)
         }
     }

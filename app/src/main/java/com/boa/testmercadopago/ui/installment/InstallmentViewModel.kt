@@ -37,8 +37,15 @@ class InstallmentViewModel(private val getInstallmentsUseCase: GetInstallmentsUs
     }
 
     private fun onError(exception: BaseException?) {
+        val viewStatus = getInitialViewState()
+        viewStatus.isError = true
+        viewStatus.errorMessage = exception?.message ?: ""
+        resourceViewState.value = viewStatus
     }
 
     private fun onLoading(progress: Int) {
+        val viewStatus = getInitialViewState()
+        viewStatus.isLoading = progress > 100
+        resourceViewState.value = viewStatus
     }
 }
