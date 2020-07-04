@@ -5,8 +5,4 @@ package com.boa.testmercadopago.base
  */
 open class BaseViewState {
     var isReady = false
-    var hasError = false
-    var hasSuccess = false
-    var isComplete = false
-    var yetLoading = false
 }
